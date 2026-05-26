@@ -81,6 +81,7 @@ const title = document.getElementById("title");
 const text = document.getElementById("text");
 const options = document.getElementById("options");
 const footerText = document.getElementById("footerText");
+const yesSound = document.getElementById("yippySound");
 
 document.getElementById("startBtn").addEventListener("click", startQuiz);
 
@@ -219,6 +220,11 @@ function moveNoButton(button) {
 }
 
 function showYesScreen() {
+  if (yippySound) {
+    yippySound.currentTime = 0;
+    yippySound.volume = 0.7;
+    yippySound.play();
+  }
   topText.textContent = "excellent choice";
   questionCounter.textContent = "official status";
   scoreCounter.textContent = "approved";
